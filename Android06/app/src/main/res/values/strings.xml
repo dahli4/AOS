@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Android06</string>
+    <string name="btnButtonText">버튼글자</string>
+    <string name="btnNextText">버튼다음</string>
+</resources>
