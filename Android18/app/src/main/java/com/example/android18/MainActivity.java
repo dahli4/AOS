@@ -3,6 +3,7 @@ package com.example.android18;
 import static android.view.View.*;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -57,7 +58,8 @@ public class MainActivity extends AppCompatActivity {
         btnGoNext.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getApplicationContext(), CustomListViewActivity.class);
+                startActivity(intent);
             }
         });
 
