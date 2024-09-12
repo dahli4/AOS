@@ -7,13 +7,10 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import androidx.core.content.ContextCompat;
-
 import java.util.ArrayList;
 
-public class SimpleAdapter extends BaseAdapter {
-    ArrayList<String> itemDatas = new ArrayList<String>();
-
+public class SimpleAdapter  extends BaseAdapter {
+    ArrayList<String> itemDatas = new  ArrayList<String>();
     @Override
     public int getCount() {
         return itemDatas.size();
@@ -21,7 +18,7 @@ public class SimpleAdapter extends BaseAdapter {
 
     @Override
     public Object getItem(int position) {
-        return itemDatas.get(position);
+        return  itemDatas.get(  position );
     }
 
     @Override
@@ -34,18 +31,19 @@ public class SimpleAdapter extends BaseAdapter {
         final Context context = parent.getContext();
         if (curView == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            curView = inflater.inflate(R.layout.layout_list_item, parent, false);
+            curView = inflater.inflate( R.layout.layout_list_item, parent, false);
         }
-        TextView tvTitle = (TextView) curView.findViewById(R.id.tvTitle) ;
+        TextView tvItem = (TextView) curView.findViewById(R.id.tvItem) ;
 
-        String displayData = itemDatas.get(position);
-        tvTitle.setText(displayData);
+        String displayData = itemDatas.get( position ) ;
 
+        tvItem.setText(  displayData );
         return curView;
     }
 
-    public void addItem(String addData) {
-        itemDatas.add(addData);
+    public void addItem( String addData ){
+        itemDatas.add(  addData );
         this.notifyDataSetChanged();
     }
+
 }
